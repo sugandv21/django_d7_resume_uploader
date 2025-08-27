@@ -1,0 +1,27 @@
+{% extends 'resumes/base.html' %}
+{% block title %}Resumes{% endblock %}
+{% block content %}
+<h2>All Resumes</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>Resume</th>
+            <th>Uploaded At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in resumes %}
+        <tr>
+            <td>{{ r.name }}</td>
+            <td>{{ r.email }}</td>
+            <td>{{ r.position }}</td>
+            <td><a href="{{ r.file.url }}" download class="btn btn-sm btn-primary">Download PDF</a></td>
+            <td>{{ r.uploaded_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

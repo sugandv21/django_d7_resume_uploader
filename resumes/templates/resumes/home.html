@@ -1,0 +1,8 @@
+{% extends 'resumes/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Resume Submission Portal</h1>
+    <a href="{% url 'submit_resume' %}" class="btn btn-primary mt-3">Submit Your Resume</a>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'resumes/base.html' %}
+{% block title %}Submit Resume{% endblock %}
+{% block content %}
+<h2>Submit Your Resume</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}
